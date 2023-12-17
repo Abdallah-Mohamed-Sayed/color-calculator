@@ -17,48 +17,44 @@ function getColor(order) {
 }
 
 function calculateColor() {
-  const cableType = parseInt(document.getElementById("cableType").value);
-  const cableTypes = [4, 12, 36, 144];
-
   const smallCableInput = document.getElementById("smallCable");
   const smallCable = parseInt(smallCableInput.value);
 
-  if (isNaN(cableType) || isNaN(smallCable)) {
+  if (isNaN(smallCable)) {
     document.getElementById("output").innerText =
       "Please enter valid numeric values.";
     return;
   }
 
-  if (!cableTypes.includes(cableType)) {
+  if (smallCable > 144) {
     document.getElementById("output").innerText =
-      "This is an invalid cable type.";
+      "This small optical cable does not exist for the selected cable.";
   } else {
-    if (smallCable > cableType) {
-      document.getElementById("output").innerText =
-        "This small optical cable does not exist for the selected cable.";
-    } else {
-      const outDiv = Math.ceil(smallCable / 12);
-      const tubeColor = getColor(outDiv);
+    const outDiv = Math.ceil(smallCable / 12);
+    const tubeColor = getColor(outDiv);
 
-      const order = smallCable - (outDiv - 1) * 12;
-      const smallCableColor = getColor(order);
+    const order = smallCable - (outDiv - 1) * 12;
+    const smallCableColor = getColor(order);
 
-      const outputText = `
+    const outputText = `
             لون التيوب: ${tubeColor}
             رقم التيوب: ${outDiv}
             لون الفرعة: ${smallCableColor}
             رقم الفرعة: ${order}
           `;
-      document.getElementById("output").innerText = outputText;
+    document.getElementById("output").innerText = outputText;
 
-      // Focus on the next input field or submit the form if it's the last input
-      const nextInput = smallCableInput.nextElementSibling;
-      if (nextInput) {
-        nextInput.focus();
-      } else {
-        document.getElementById("submitButton").click();
-      }
-    }
+    const allSmallCables = document.querySelectorAll(
+      "#Main g:not(#Jacket) circle:not(.t)"
+    );
+    const smallcableSVG = document.querySelector(
+      `#tube_${outDiv} .num-${order}:not(.t)`
+    );
+    allSmallCables.forEach((e) => {
+      e.classList.remove("active");
+    });
+    smallcableSVG.parentElement.appendChild(smallcableSVG);
+    smallcableSVG.classList.add("active");
   }
 
   // Show output with fade-in animation
@@ -67,7 +63,7 @@ function calculateColor() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initial focus animation for the first input field
-  const firstInput = document.getElementById("cableType");
+  const firstInput = document.getElementById("smallCable");
   firstInput.focus();
   firstInput.select();
 
@@ -77,14 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (event.key === "Enter") {
         event.preventDefault(); // Prevent form submission
         calculateColor();
-      }
-    });
-
-  document
-    .getElementById("cableType")
-    .addEventListener("keyup", function (event) {
-      if (event.key === "Enter") {
-        document.getElementById("smallCable").focus();
       }
     });
 });

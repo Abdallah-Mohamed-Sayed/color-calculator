@@ -98,3 +98,130 @@ button:hover {
     opacity: 1;
   }
 }
+
+/* SVG Styles */
+
+.j-cls-1 {
+  fill: #fffffb;
+  stroke: #979a93;
+  stroke-width: 11px;
+}
+
+.j-cls-2 {
+  fill: #434244;
+}
+
+.j-cls-3 {
+  fill: #ffd8a8;
+}
+
+.in-tube {
+  fill: #cee1ea;
+}
+
+.cls-1,
+.num-5,
+.num-4,
+.num-9,
+.num-7,
+.num-11,
+.num-12,
+.num-10,
+.num-8,
+.num-3,
+.num-2,
+.num-1,
+.num-6 {
+  stroke-miterlimit: 10;
+}
+
+.num-5,
+.num-4,
+.num-9,
+.num-7,
+.num-11,
+.num-12,
+.num-10,
+.num-8,
+.num-3,
+.num-2,
+.num-1,
+.num-6 {
+  stroke: #000;
+  stroke-width: 0.25px;
+}
+
+.num-8 {
+  fill: #000000;
+}
+
+.num-3 {
+  fill: #00ff00;
+}
+
+.num-2 {
+  fill: #f79646;
+}
+
+.num-1 {
+  fill: #3366ff;
+}
+
+.num-6 {
+  fill: #fff;
+}
+
+.num-5 {
+  fill: #c0c0c0;
+}
+
+.num-4 {
+  fill: #993300;
+}
+
+.num-9 {
+  fill: #ffff00;
+}
+
+.num-7 {
+  fill: #ff0000;
+}
+
+.num-11 {
+  fill: #ffccff;
+}
+
+.num-12 {
+  fill: #66ffff;
+}
+
+.num-10 {
+  fill: #cc66ff;
+}
+
+#Main g:not(#Jacket) circle:not(.t) {
+  transition: r 2s ease-in-out;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+#Main g:not(#Jacket) circle:not(.t).active {
+  animation: scaleCircle 2s ease-in-out infinite;
+  position: relative;
+  z-index: 100;
+}
+
+@keyframes scaleCircle {
+  0% {
+    r: 6.77;
+  }
+
+  50% {
+    r: 30;
+  }
+
+  100% {
+    r: 6.77;
+  }
+}

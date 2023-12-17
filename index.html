@@ -4,24 +4,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cable Color Calculator</title>
+  <title>ايجاد لون ورقم الفرعة</title>
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-  <div id="calculator">
-    <h3>ايجاد لون ورقم الفرعة والتيوب في كابلات الفايبر</h3>
-    <label for="cableType">ادخل عدد فرعات الكابل مثال [4, 12, 36, 144]:</label>
-    <input type="number" id="cableType" required>
-    <br>
-    <label for="smallCable">ادخل رقم الفرعة: </label>
-    <input type="number" id="smallCable" required>
-    <br>
-    <button id="submitButton" onclick="calculateColor()">اوجد</button>
-    <div id="output"></div>
-    <br>
-    <hr>
-    <div id="madeBy">Made by Abdallah Bourkeba & Osama Sameh</div>
+  <div class="container">
+    <div id="calculator">
+      <h3>ايجاد لون ورقم الفرعة والتيوب في كابلات الفايبر ال 144 فرعة</h3>
+      <label for="smallCable">ادخل رقم الفرعة: </label>
+      <input type="number" id="smallCable" required>
+      <br>
+      <button id="submitButton" onclick="calculateColor()">اوجد</button>
+      <div id="output"></div>
+      <br>
+      <hr>
+      <div id="madeBy">Made by Abdallah Bourkeba & Osama Sameh</div>
+    </div>
+    <div class="cable">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720.05 720.05">
+        <defs>
+          <style>
+          </style>
+        </defs>
+        <g id="Main" data-name="Main">
+          <g id="Jacket" data-name="Jacket">
+            <circle cx="360.02" cy="360.02" r="360.02" />
+            <circle class="j-cls-1" cx="360.02" cy="360.02" r="242.05" />
+            <circle class="j-cls-2" cx="360.02" cy="360.02" r="143.79" />
+            <circle class="j-cls-3" cx="360.02" cy="360.02" r="59.13" />
+          </g>
+          <g id="tube_1" data-name="tube 1">
+            <circle class="num-1 t" cx="358.02" cy="169.78" r="47.67" />
+            <circle class="in-tube" cx="358.02" cy="169.78" r="33.71" />
+            <circle class="num-3" cx="370.47" cy="149.15" r="6.77" />
+            <circle class="num-2" cx="356.92" cy="149.15" r="6.77" />
+            <circle class="num-1" cx="343.37" cy="149.15" r="6.77" />
+            <circle class="num-6" cx="370.47" cy="162.7" r="6.77" />
+            <circle class="num-5" cx="356.92" cy="162.7" r="6.77" />
+            <circle class="num-4" cx="343.37" cy="162.7" r="6.77" />
+            <circle class="num-9" cx="370.47" cy="176.24" r="6.77" />
+            <circle class="num-8" cx="356.92" cy="176.24" r="6.77" />
+            <circle class="num-7" cx="343.37" cy="176.24" r="6.77" />
+            <circle class="num-11" cx="370.47" cy="189.79" r="6.77" />
+            <circle class="num-12" cx="356.92" cy="189.79" r="6.77" />
+            <circle class="num-10" cx="343.37" cy="189.79" r="6.77" />
+          </g>
+          <g id="tube_2" data-name="tube 2">
+            <circle class="num-2 t" cx="453.02" cy="195.24" r="47.67" />
+            <circle class="in-tube" cx="453.02" cy="195.24" r="33.71" />
+            <circle class="num-3" cx="431.93" cy="206.88" r="6.77" />
+            <circle class="num-2" cx="443.66" cy="213.66" r="6.77" />
+            <circle class="num-1" cx="455.39" cy="220.43" r="6.77" />
+            <circle class="num-6" cx="438.7" cy="195.15" r="6.77" />
+            <circle class="num-5" cx="450.44" cy="201.92" r="6.77" />
+            <circle class="num-4" cx="462.17" cy="208.7" r="6.77" />
+            <circle class="num-9" cx="445.48" cy="183.42" r="6.77" />
+            <circle class="num-8" cx="457.21" cy="190.19" r="6.77" />
+            <circle class="num-7" cx="468.94" cy="196.97" r="6.77" />
+            <circle class="num-11" cx="452.25" cy="171.69" r="6.77" />
+            <circle class="num-12" cx="463.98" cy="178.46" r="6.77" />
+            <circle class="num-10" cx="475.72" cy="185.23" r="6.77" />
+          </g>
+          <g id="tube_3" data-name="tube 3">
+            <circle class="num-3 t" cx="522.57" cy="264.78" r="47.67" />
+            <circle class="in-tube" cx="522.57" cy="264.78" r="33.71" />
+            <circle class="num-3" cx="498.48" cy="264.32" r="6.77" />
+            <circle class="num-2" cx="505.25" cy="276.05" r="6.77" />
+            <circle class="num-1" cx="512.02" cy="287.79" r="6.77" />
+            <circle class="num-6" cx="510.21" cy="257.55" r="6.77" />
+            <circle class="num-5" cx="516.98" cy="269.28" r="6.77" />
+            <circle class="num-4" cx="523.76" cy="281.01" r="6.77" />
+            <circle class="num-9" cx="521.94" cy="250.77" r="6.77" />
+            <circle class="num-8" cx="528.72" cy="262.51" r="6.77" />
+            <circle class="num-7" cx="535.49" cy="274.24" r="6.77" />
+            <circle class="num-11" cx="533.67" cy="244" r="6.77" />
+            <circle class="num-12" cx="540.45" cy="255.73" r="6.77" />
+            <circle class="num-10" cx="547.22" cy="267.46" r="6.77" />
+          </g>
+          <g id="tube_4" data-name="tube 4">
+            <circle class="num-4 t" cx="548.02" cy="359.78" r="47.67" />
+            <circle class="in-tube" cx="548.02" cy="359.78" r="33.71" />
+            <circle class="num-3" cx="527.39" cy="347.34" r="6.77" />
+            <circle class="num-2" cx="527.39" cy="360.88" r="6.77" />
+            <circle class="num-1" cx="527.39" cy="374.43" r="6.77" />
+            <circle class="num-6" cx="540.94" cy="347.34" r="6.77" />
+            <circle class="num-5" cx="540.94" cy="360.88" r="6.77" />
+            <circle class="num-4" cx="540.94" cy="374.43" r="6.77" />
+            <circle class="num-9" cx="554.48" cy="347.34" r="6.77" />
+            <circle class="num-8" cx="554.48" cy="360.88" r="6.77" />
+            <circle class="num-7" cx="554.48" cy="374.43" r="6.77" />
+            <circle class="num-11" cx="568.03" cy="347.34" r="6.77" />
+            <circle class="num-12" cx="568.03" cy="360.88" r="6.77" />
+            <circle class="num-10" cx="568.03" cy="374.43" r="6.77" />
+          </g>
+          <g id="tube_5" data-name="tube 5">
+            <circle class="num-5 t" cx="522.57" cy="454.78" r="47.67" />
+            <circle class="in-tube" cx="522.57" cy="454.78" r="33.71" />
+            <circle class="num-3" cx="510.92" cy="433.69" r="6.77" />
+            <circle class="num-2" cx="504.15" cy="445.42" r="6.77" />
+            <circle class="num-1" cx="497.37" cy="457.15" r="6.77" />
+            <circle class="num-6" cx="522.65" cy="440.46" r="6.77" />
+            <circle class="num-5" cx="515.88" cy="452.19" r="6.77" />
+            <circle class="num-4" cx="509.11" cy="463.93" r="6.77" />
+            <circle class="num-9" cx="534.39" cy="447.24" r="6.77" />
+            <circle class="num-8" cx="527.61" cy="458.97" r="6.77" />
+            <circle class="num-7" cx="520.84" cy="470.7" r="6.77" />
+            <circle class="num-11" cx="546.12" cy="454.01" r="6.77" />
+            <circle class="num-12" cx="539.34" cy="465.74" r="6.77" />
+            <circle class="num-10" cx="532.57" cy="477.47" r="6.77" />
+          </g>
+          <g id="tube_6" data-name="tube 6">
+            <circle class="num-6 t" cx="453.02" cy="524.33" r="47.67" />
+            <circle class="in-tube" cx="453.02" cy="524.33" r="33.71" />
+            <circle class="num-3" cx="453.48" cy="500.24" r="6.77" />
+            <circle class="num-2" cx="441.75" cy="507.01" r="6.77" />
+            <circle class="num-1" cx="430.02" cy="513.78" r="6.77" />
+            <circle class="num-6" cx="460.26" cy="511.97" r="6.77" />
+            <circle class="num-5" cx="448.52" cy="518.74" r="6.77" />
+            <circle class="num-4" cx="436.79" cy="525.52" r="6.77" />
+            <circle class="num-9" cx="467.03" cy="523.7" r="6.77" />
+            <circle class="num-8" cx="455.3" cy="530.47" r="6.77" />
+            <circle class="num-7" cx="443.57" cy="537.25" r="6.77" />
+            <circle class="num-11" cx="473.8" cy="535.43" r="6.77" />
+            <circle class="num-12" cx="462.07" cy="542.21" r="6.77" />
+            <circle class="num-10" cx="450.34" cy="548.98" r="6.77" />
+          </g>
+          <g id="tube_7" data-name="tube 7">
+            <circle class="num-7 t" cx="358.02" cy="549.78" r="47.67" />
+            <circle class="in-tube" cx="358.02" cy="549.78" r="33.71" />
+            <circle class="num-3" cx="370.47" cy="529.15" r="6.77" />
+            <circle class="num-2" cx="356.92" cy="529.15" r="6.77" />
+            <circle class="num-1" cx="343.37" cy="529.15" r="6.77" />
+            <circle class="num-6" cx="370.47" cy="542.7" r="6.77" />
+            <circle class="num-5" cx="356.92" cy="542.7" r="6.77" />
+            <circle class="num-4" cx="343.37" cy="542.7" r="6.77" />
+            <circle class="num-9" cx="370.47" cy="556.24" r="6.77" />
+            <circle class="num-8" cx="356.92" cy="556.24" r="6.77" />
+            <circle class="num-7" cx="343.37" cy="556.24" r="6.77" />
+            <circle class="num-11" cx="370.47" cy="569.79" r="6.77" />
+            <circle class="num-12" cx="356.92" cy="569.79" r="6.77" />
+            <circle class="num-10" cx="343.37" cy="569.79" r="6.77" />
+          </g>
+          <g id="tube_8" data-name="tube 8">
+            <circle class="num-8 t" cx="263.02" cy="524.33" r="47.67" />
+            <circle class="in-tube" cx="263.02" cy="524.33" r="33.71" />
+            <circle class="num-3" cx="241.93" cy="535.97" r="6.77" />
+            <circle class="num-2" cx="253.66" cy="542.75" r="6.77" />
+            <circle class="num-1" cx="265.39" cy="549.52" r="6.77" />
+            <circle class="num-6" cx="248.7" cy="524.24" r="6.77" />
+            <circle class="num-5" cx="260.44" cy="531.01" r="6.77" />
+            <circle class="num-4" cx="272.17" cy="537.79" r="6.77" />
+            <circle class="num-9" cx="255.48" cy="512.51" r="6.77" />
+            <circle class="num-8" cx="267.21" cy="519.28" r="6.77" />
+            <circle class="num-7" cx="278.94" cy="526.06" r="6.77" />
+            <circle class="num-11" cx="262.25" cy="500.78" r="6.77" />
+            <circle class="num-12" cx="273.98" cy="507.55" r="6.77" />
+            <circle class="num-10" cx="285.72" cy="514.32" r="6.77" />
+          </g>
+          <g id="tube_9" data-name="tube 9">
+            <circle class="num-9 t" cx="193.48" cy="454.78" r="47.67" />
+            <circle class="in-tube" cx="193.48" cy="454.78" r="33.71" />
+            <circle class="num-3" cx="169.39" cy="454.32" r="6.77" />
+            <circle class="num-2" cx="176.16" cy="466.05" r="6.77" />
+            <circle class="num-1" cx="182.94" cy="477.79" r="6.77" />
+            <circle class="num-6" cx="181.12" cy="447.55" r="6.77" />
+            <circle class="num-5" cx="187.89" cy="459.28" r="6.77" />
+            <circle class="num-4" cx="194.67" cy="471.01" r="6.77" />
+            <circle class="num-9" cx="192.85" cy="440.77" r="6.77" />
+            <circle class="num-8" cx="199.63" cy="452.51" r="6.77" />
+            <circle class="num-7" cx="206.4" cy="464.24" r="6.77" />
+            <circle class="num-11" cx="204.58" cy="434" r="6.77" />
+            <circle class="num-12" cx="211.36" cy="445.73" r="6.77" />
+            <circle class="num-10" cx="218.13" cy="457.46" r="6.77" />
+          </g>
+          <g id="tube_10" data-name="tube 10">
+            <circle class="num-10 t" cx="168.02" cy="359.78" r="47.67" />
+            <circle class="in-tube" cx="168.02" cy="359.78" r="33.71" />
+            <circle class="num-3" cx="147.39" cy="347.34" r="6.77" />
+            <circle class="num-2" cx="147.39" cy="360.88" r="6.77" />
+            <circle class="num-1" cx="147.39" cy="374.43" r="6.77" />
+            <circle class="num-6" cx="160.94" cy="347.34" r="6.77" />
+            <circle class="num-5" cx="160.94" cy="360.88" r="6.77" />
+            <circle class="num-4" cx="160.94" cy="374.43" r="6.77" />
+            <circle class="num-9" cx="174.48" cy="347.34" r="6.77" />
+            <circle class="num-8" cx="174.48" cy="360.88" r="6.77" />
+            <circle class="num-7" cx="174.48" cy="374.43" r="6.77" />
+            <circle class="num-11" cx="188.03" cy="347.34" r="6.77" />
+            <circle class="num-12" cx="188.03" cy="360.88" r="6.77" />
+            <circle class="num-10" cx="188.03" cy="374.43" r="6.77" />
+          </g>
+          <g id="tube_11" data-name="tube 11">
+            <circle class="num-11 t" cx="193.48" cy="264.78" r="47.67" />
+            <circle class="in-tube" cx="193.48" cy="264.78" r="33.71" />
+            <circle class="num-3" cx="181.83" cy="243.69" r="6.77" />
+            <circle class="num-2" cx="175.06" cy="255.42" r="6.77" />
+            <circle class="num-1" cx="168.28" cy="267.15" r="6.77" />
+            <circle class="num-6" cx="193.56" cy="250.46" r="6.77" />
+            <circle class="num-5" cx="186.79" cy="262.19" r="6.77" />
+            <circle class="num-4" cx="180.02" cy="273.93" r="6.77" />
+            <circle class="num-9" cx="205.3" cy="257.24" r="6.77" />
+            <circle class="num-8" cx="198.52" cy="268.97" r="6.77" />
+            <circle class="num-7" cx="191.75" cy="280.7" r="6.77" />
+            <circle class="num-11" cx="217.03" cy="264.01" r="6.77" />
+            <circle class="num-12" cx="210.25" cy="275.74" r="6.77" />
+            <circle class="num-10" cx="203.48" cy="287.47" r="6.77" />
+          </g>
+          <g id="tube_12" data-name="tube 12">
+            <circle class="num-12 t" cx="263.02" cy="195.24" r="47.67" />
+            <circle class="in-tube" cx="263.02" cy="195.24" r="33.71" />
+            <circle class="num-3" cx="263.48" cy="171.15" r="6.77" />
+            <circle class="num-2" cx="251.75" cy="177.92" r="6.77" />
+            <circle class="num-1" cx="240.02" cy="184.69" r="6.77" />
+            <circle class="num-6" cx="270.26" cy="182.88" r="6.77" />
+            <circle class="num-5" cx="258.52" cy="189.65" r="6.77" />
+            <circle class="num-4" cx="246.79" cy="196.43" r="6.77" />
+            <circle class="num-9" cx="277.03" cy="194.61" r="6.77" />
+            <circle class="num-8" cx="265.3" cy="201.38" r="6.77" />
+            <circle class="num-7" cx="253.57" cy="208.16" r="6.77" />
+            <circle class="num-11" cx="283.8" cy="206.34" r="6.77" />
+            <circle class="num-12" cx="272.07" cy="213.12" r="6.77" />
+            <circle class="num-10" cx="260.34" cy="219.89" r="6.77" />
+          </g>
+        </g>
+      </svg>
+    </div>
   </div>
 
   <script src="main.js"></script>
