@@ -34,16 +34,30 @@ body {
   }
 }
 
-#calculator {
+.container {
+  display: flex;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 400px;
+  position: relative;
+  align-items: center;
+  gap: 20px;
+  min-width: 320px;
+  max-width: 90%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.cable {
+  flex: 1;
+  min-width: 200px;
+}
+
+#calculator {
   text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
+  flex: 1;
 }
 
 label {
@@ -99,6 +113,24 @@ button:hover {
   }
 }
 
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch; /* Ensures child elements stretch to full width */
+  }
+
+  .cable {
+    flex: none; /* Disable flex for .cable to take full width */
+    width: 100%; /* Ensure .cable takes full width */
+    max-width: 350px;
+    align-self: center;
+  }
+
+  #calculator {
+    flex: none; /* Disable flex for #calculator to take full width */
+    width: 100%; /* Ensure #calculator takes full width */
+  }
+}
 /* SVG Styles */
 
 .j-cls-1 {
