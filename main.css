@@ -104,6 +104,7 @@ body {
   position: absolute;
   opacity: 0;
   transform: scaleX(0);
+  min-width: 500px;
 }
 
 .down > div.active {
@@ -329,6 +330,7 @@ input:not(:checked):hover + label {
 
   .down > div {
     flex-direction: column;
+    min-width: 300px;
   }
 }
 /* SVG Styles */
