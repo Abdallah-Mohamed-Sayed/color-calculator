@@ -12,12 +12,12 @@
   <div class="container">
     <div class="up">
       <ul>
-        <li>من الرقم الي اللون</li>
-        <li>من اللون الي الرقم</li>
+        <li class="active" data-for="operation">من الرقم الي اللون</li>
+        <li data-for="reversed">من اللون الي الرقم</li>
       </ul>
     </div>
     <div class="down">
-      <div class="operation">
+      <div class="operation active">
         <div id="calculator">
           <h3>ايجاد لون ورقم الفرعة والتيوب في كابلات الفايبر ال 144 فرعة</h3>
           <label for="smallCable">ادخل رقم الفرعة: </label>
@@ -237,105 +237,111 @@
       <div class="reversed">
         <div class="choose-color">
           <div class="tube-color">
+            <h3>لون التيوب</h3>
             <div class="nest 1">
-              <label for="1">ازرق</label>
-              <input type="radio" id="1" name="tube">
+              <input type="radio" id="1-tube" name="tube">
+              <label for="1-tube">ازرق</label>
             </div>
             <div class="nest 2">
-              <label for="2">برتقالي</label>
-              <input type="radio" id="2" name="tube">
+              <input type="radio" id="2-tube" name="tube">
+              <label for="2-tube">برتقالي</label>
             </div>
             <div class="nest 3">
-              <label for="3">اخضر</label>
-              <input type="radio" id="3" name="tube">
+              <input type="radio" id="3-tube" name="tube">
+              <label for="3-tube">اخضر</label>
             </div>
             <div class="nest 4">
-              <label for="4">بني</label>
-              <input type="radio" id="4" name="tube">
+              <input type="radio" id="4-tube" name="tube">
+              <label for="4-tube">بني</label>
             </div>
             <div class="nest 5">
-              <label for="5">رمادي</label>
-              <input type="radio" id="5" name="tube">
+              <input type="radio" id="5-tube" name="tube">
+              <label for="5-tube">رمادي</label>
             </div>
             <div class="nest 6">
-              <label for="6">ابيض</label>
-              <input type="radio" id="6" name="tube">
+              <input type="radio" id="6-tube" name="tube">
+              <label for="6-tube">ابيض</label>
             </div>
             <div class="nest 7">
-              <label for="7">احمر</label>
-              <input type="radio" id="7" name="tube">
+              <input type="radio" id="7-tube" name="tube">
+              <label for="7-tube">احمر</label>
             </div>
             <div class="nest 8">
-              <label for="8">اسود</label>
-              <input type="radio" id="8" name="tube">
+              <input type="radio" id="8-tube" name="tube">
+              <label for="8-tube">اسود</label>
             </div>
             <div class="nest 9">
-              <label for="9">اصفر</label>
-              <input type="radio" id="9" name="tube">
+              <input type="radio" id="9-tube" name="tube">
+              <label for="9-tube">اصفر</label>
             </div>
             <div class="nest 10">
-              <label for="10">بنفسجي</label>
-              <input type="radio" id="10" name="tube">
+              <input type="radio" id="10-tube" name="tube">
+              <label for="10-tube">بنفسجي</label>
             </div>
             <div class="nest 11">
-              <label for="11">بمبي</label>
-              <input type="radio" id="11" name="tube">
+              <input type="radio" id="11-tube" name="tube">
+              <label for="11-tube">بمبي</label>
             </div>
             <div class="nest 12">
-              <label for="12">لبني</label>
-              <input type="radio" id="12" name="tube">
+              <input type="radio" id="12-tube" name="tube">
+              <label for="12-tube">لبني</label>
             </div>
           </div>
           <div class="small-color">
+            <h3>لون الفرعة</h3>
             <div class="nest 1">
-              <label for="1">ازرق</label>
               <input type="radio" id="1" name="small">
+              <label for="1">ازرق</label>
             </div>
             <div class="nest 2">
-              <label for="2">برتقالي</label>
               <input type="radio" id="2" name="small">
+              <label for="2">برتقالي</label>
             </div>
             <div class="nest 3">
-              <label for="3">اخضر</label>
               <input type="radio" id="3" name="small">
+              <label for="3">اخضر</label>
             </div>
             <div class="nest 4">
-              <label for="4">بني</label>
               <input type="radio" id="4" name="small">
+              <label for="4">بني</label>
             </div>
             <div class="nest 5">
-              <label for="5">رمادي</label>
               <input type="radio" id="5" name="small">
+              <label for="5">رمادي</label>
             </div>
             <div class="nest 6">
-              <label for="6">ابيض</label>
               <input type="radio" id="6" name="small">
+              <label for="6">ابيض</label>
             </div>
             <div class="nest 7">
-              <label for="7">احمر</label>
               <input type="radio" id="7" name="small">
+              <label for="7">احمر</label>
             </div>
             <div class="nest 8">
-              <label for="8">اسود</label>
               <input type="radio" id="8" name="small">
+              <label for="8">اسود</label>
             </div>
             <div class="nest 9">
-              <label for="9">اصفر</label>
               <input type="radio" id="9" name="small">
+              <label for="9">اصفر</label>
             </div>
             <div class="nest 10">
-              <label for="10">بنفسجي</label>
               <input type="radio" id="10" name="small">
+              <label for="10">بنفسجي</label>
             </div>
             <div class="nest 11">
-              <label for="11">بمبي</label>
               <input type="radio" id="11" name="small">
+              <label for="11">بمبي</label>
             </div>
             <div class="nest 12">
-              <label for="12">لبني</label>
               <input type="radio" id="12" name="small">
+              <label for="12">لبني</label>
             </div>
           </div>
+        </div>
+        <div class="output">
+          <button id="reversedBtn" onclick="reversedFunc()">اوجد</button>
+          <p class="text"></p>
         </div>
       </div>
     </div>

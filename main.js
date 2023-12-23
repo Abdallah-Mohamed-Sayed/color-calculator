@@ -61,6 +61,32 @@ function calculateColor() {
   document.getElementById("output").style.opacity = "1";
 }
 
+function reversedFunc() {
+  const inpts = document.querySelectorAll(".nest input");
+  const outputP = document.querySelector(".output p");
+  let checkedCount = 0;
+
+  inpts.forEach((inp) => {
+    if (inp.checked) {
+      checkedCount++;
+    }
+  });
+  if (checkedCount < 2) {
+    outputP.innerHTML =
+      "Please choose from tube number and small cable number too";
+  } else {
+    const tubeColor = +document
+      .querySelector(".tube-color input:checked")
+      .id.match(/\d+/g)[0];
+    const smallColor = +document
+      .querySelector(".small-color input:checked")
+      .id.match(/\d+/g)[0];
+    let sCN = (tubeColor - 1) * 12 + smallColor;
+
+    outputP.innerHTML = `رقم الفرعة في كابل ال 144 فرعة: ${sCN}`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initial focus animation for the first input field
   const firstInput = document.getElementById("smallCable");
@@ -75,4 +101,24 @@ document.addEventListener("DOMContentLoaded", function () {
         calculateColor();
       }
     });
+
+  const tabs = document.querySelectorAll(".up li");
+  const conts = document.querySelectorAll(".down > div");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((e) => {
+        e.classList.remove("active");
+      });
+      tab.classList.add("active");
+
+      conts.forEach((e) => {
+        e.classList.remove("active");
+      });
+
+      document
+        .querySelector(`.${tab.getAttribute("data-for")}`)
+        .classList.add("active");
+    });
+  });
 });

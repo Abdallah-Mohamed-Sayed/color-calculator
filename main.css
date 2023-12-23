@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   direction: rtl;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -34,20 +40,82 @@ body {
   }
 }
 
-.operation {
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 8px;
+.container {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 8px;
   position: relative;
   align-items: center;
-  gap: 20px;
   min-width: 320px;
   max-width: 90%;
   margin: 0 auto;
   flex-wrap: wrap;
-  box-sizing: border-box;
+}
+
+.up {
+  flex: 1;
+}
+
+.up ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+}
+
+.up ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #eee;
+  transition: 0.3s;
+}
+
+.up ul li:hover {
+  background-color: #ddd;
+}
+
+.up ul li.active {
+  background-color: #ccc;
+}
+
+.down {
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 5px;
+  background-color: #ccc;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.down > div {
+  display: flex;
+  transition: 0.3s;
+  position: absolute;
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.down > div.active {
+  position: relative;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.operation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  right: 0;
+  transform-origin: right center;
 }
 
 .cable {
@@ -60,14 +128,14 @@ body {
   flex: 1;
 }
 
-label {
+#calculator label {
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
   color: #333;
 }
 
-input {
+#smallCable {
   width: calc(100% - 16px);
   padding: 8px;
   margin-bottom: 16px;
@@ -75,18 +143,18 @@ input {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: dodgerblue;
   color: #fff;
   padding: 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   width: 100%;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #1e83ff;
 }
 
 #output {
@@ -101,6 +169,103 @@ button:hover {
   margin-top: 20px;
   font-size: 12px;
   color: #555;
+}
+
+.reversed {
+  left: 0;
+  flex: 1;
+  transform-origin: left center;
+}
+
+.choose-color {
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.choose-color > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.small-color > div,
+.tube-color > div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100px;
+}
+
+.small-color > div label,
+.tube-color > div label {
+  flex: 1;
+  position: relative;
+  padding-left: 30px;
+  transition: 0.3s;
+}
+
+.small-color > div label::before,
+.tube-color > div label::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid dodgerblue;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.small-color > div label::after,
+.tube-color > div label::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translate(-4.5px, -50%);
+  transition: 0.5s;
+}
+
+.nest input:checked + label::after {
+  background-color: dodgerblue;
+}
+
+.nest input:not(:checked):hover + label::after {
+  background-color: #2195f351;
+}
+
+.nest input:not(:checked):hover + label::after {
+  background-color: #2195f351;
+}
+
+.nest input:checked + label {
+  color: dodgerblue;
+}
+
+input:not(:checked):hover + label {
+  color: dodgerblue;
+}
+
+.small-color > div input,
+.tube-color > div input {
+  outline: none;
+  appearance: none;
+}
+
+.output {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 @keyframes fadeIn {
