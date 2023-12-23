@@ -1,3 +1,8 @@
+const firstInput = document.getElementById("smallCable");
+const micBtn = document.querySelector("#hearBtn");
+let isSpeechActive = false;
+let recognition;
+
 function getColor(order) {
   const listColors = [
     "ازرق",
@@ -26,7 +31,7 @@ function calculateColor() {
     return;
   }
 
-  if (smallCable > 144) {
+  if (smallCable > 144 || smallCable <= 0) {
     document.getElementById("output").innerText =
       "This small optical cable does not exist for the selected cable.";
   } else {
@@ -87,9 +92,53 @@ function reversedFunc() {
   }
 }
 
+function startRecord() {
+  isSpeechActive = true;
+  window.SpeechRecognition = window.webkitSpeechRecognition;
+
+  recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+
+  recognition.addEventListener("result", (e) => {
+    const transcript = Array.from(e.results)
+      .map((result) => result[0])
+      .map((result) => result.transcript)
+      .join("");
+
+    // Extract numbers from the transcript using a regular expression
+    const numbers =
+      transcript.match(/\b(?:[1-9][0-9]?|1[0-3][0-9]|14[0-4])\b/g) || [];
+
+    // Process the extracted numbers
+    numbers.forEach((number) => {
+      const parsedNumber = parseInt(number, 10);
+      // console.log("Valid number:", parsedNumber);
+      firstInput.value = parsedNumber;
+      calculateColor();
+      // You can perform further actions with the numbers here
+    });
+  });
+
+  recognition.addEventListener("end", () => {
+    if (isSpeechActive) {
+      recognition.start();
+    }
+  });
+
+  if (isSpeechActive) {
+    recognition.start();
+  }
+}
+
+function stopRecord() {
+  isSpeechActive = false;
+  if (recognition) {
+    recognition.stop();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initial focus animation for the first input field
-  const firstInput = document.getElementById("smallCable");
   firstInput.focus();
   firstInput.select();
 
@@ -120,5 +169,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector(`.${tab.getAttribute("data-for")}`)
         .classList.add("active");
     });
+  });
+
+  micBtn.addEventListener("click", () => {
+    if (!isSpeechActive) {
+      startRecord();
+      micBtn.classList.add("active");
+    } else {
+      stopRecord();
+      micBtn.classList.remove("active");
+    }
   });
 });

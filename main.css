@@ -126,11 +126,15 @@ body {
 #calculator {
   text-align: center;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
 }
 
 #calculator label {
   display: block;
-  margin-bottom: 8px;
   font-size: 14px;
   color: #333;
 }
@@ -138,27 +142,54 @@ body {
 #smallCable {
   width: calc(100% - 16px);
   padding: 8px;
-  margin-bottom: 16px;
   box-sizing: border-box;
 }
 
-button {
+.btns {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+
+button.submitButton {
   background-color: dodgerblue;
   color: #fff;
   padding: 10px;
   border: none;
+  transition: 0.3s;
   border-radius: 5px;
+  user-select: none;
   cursor: pointer;
   font-size: 16px;
-  width: 100%;
+  flex: 6;
 }
 
-button:hover {
-  background-color: #1e83ff;
+button.submitButton:hover {
+  background-color: #0063db;
+}
+
+button#hearBtn {
+  background-color: transparent;
+  min-width: 40px;
+  flex: 1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+button#hearBtn:hover {
+  background-color: #ddd;
+}
+
+button#hearBtn.active {
+  background-color: #fff;
 }
 
 #output {
-  margin-top: 20px;
   font-size: 14px;
   color: #333;
   opacity: 0;
@@ -166,7 +197,6 @@ button:hover {
 }
 
 #madeBy {
-  margin-top: 20px;
   font-size: 12px;
   color: #555;
 }
@@ -257,6 +287,10 @@ input:not(:checked):hover + label {
 .tube-color > div input {
   outline: none;
   appearance: none;
+}
+
+#reversedBtn {
+  flex: 0;
 }
 
 .output {
