@@ -49,10 +49,10 @@ body {
   border-radius: 8px;
   position: relative;
   align-items: center;
-  min-width: 320px;
+  min-width: 400px;
   max-width: 90%;
   margin: 0 auto;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .up {
@@ -94,10 +94,12 @@ body {
   gap: 20px;
   width: 100%;
   position: relative;
+  justify-content: center;
 }
 
 .down > div {
   display: flex;
+  gap: 10px;
   transition: 0.3s;
   position: absolute;
   opacity: 0;
@@ -194,11 +196,6 @@ button#hearBtn.active {
   color: #333;
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-#madeBy {
-  font-size: 12px;
-  color: #555;
 }
 
 .reversed {
@@ -321,13 +318,17 @@ input:not(:checked):hover + label {
   .cable {
     flex: none; /* Disable flex for .cable to take full width */
     width: 100%; /* Ensure .cable takes full width */
-    max-width: 350px;
+    max-width: 250px;
     align-self: center;
   }
 
   #calculator {
     flex: none; /* Disable flex for #calculator to take full width */
     width: 100%; /* Ensure #calculator takes full width */
+  }
+
+  .down > div {
+    flex-direction: column;
   }
 }
 /* SVG Styles */
